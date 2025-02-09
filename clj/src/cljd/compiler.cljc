@@ -1047,7 +1047,7 @@
             _ (when-not (= (count fixeds) (count fixed-and-opts))
                 (throw (Exception. (str args "Fixed arity mismatch (" (count fixeds) ", " (count fixed-and-opts) ") on " mname " for " (:element-name type) " of library " (:lib type)))))
             _ (when-not (case opt-kind :named (set? opts) (vector? opts))
-                (throw (Exception. (str "Optional mismatch on " mname " for " (:element-name type) "of library " (:lib type)))))
+                (throw (Exception. (str "Optional mismatch on " mname " for " (:element-name type) " of library " (:lib type)))))
             actual-fixeds
             (into [this] (map transfer-tag fixed-and-opts fixeds))
             actual-opts
